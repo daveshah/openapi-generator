@@ -108,6 +108,12 @@ module {{moduleName}}
     # Client private key file (for client certificate)
     attr_accessor :key_file
 
+    # Set this to enable/disable following HTTP 302 redirects. When enabled (set to true), HTTP redirects will be followed
+    # Default to false.
+    #
+    # @return [true, false]
+    attr_accessor :follow_redirects
+
     # Set this to customize parameters encoding of array parameter with multi collectionFormat.
     # Default to nil.
     #
@@ -132,6 +138,7 @@ module {{moduleName}}
       @params_encoding = nil
       @cert_file = nil
       @key_file = nil
+      @follow_redirects = false
       @debugging = false
       @inject_format = false
       @force_ending_format = false
